@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class JumpScare : MonoBehaviour {
+
+    public AudioSource JumpscareAmbient;
+    public AudioSource JumpscareScream;
+    public GameObject Player;
+    public GameObject JumpCam;
+
+    void start();{
+
+    startcoroutine(EndJump());
+
+    }
+
+    IEnumerator EndJump() {
+    JumpscareAmbient.play();
+    yield return new WaitForSeconds(15);
+    JumpCam.SetActive(True);
+    JumpscareScream.play;
+    Player.SetActive(false);
+    yield return new WaitForSeconds(5);
+    # ADD_THE_RESTART_MENU_HERE
+    # ATTACH_THIS_SCRIPT_TO_A_CUBE_USE_IT_AS_A_TRIGGER
+
+}
+
+}
